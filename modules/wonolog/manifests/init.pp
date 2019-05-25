@@ -18,7 +18,7 @@ class wonolog (
 		path        => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
 		cwd         => "${content}/mu-plugins/wonolog",
 		command     => 'composer require inpsyde/wonolog',
-		require     => File["${content}/mu-plugins/wonolog"],
+		require     => [ File["${content}/mu-plugins/wonolog"], Exec["install composer"] ],
 		environment => ['HOME=/home/vagrant'],
 	}
 
