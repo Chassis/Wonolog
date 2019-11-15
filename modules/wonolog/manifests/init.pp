@@ -23,7 +23,7 @@ class wonolog (
 			File["${content}/mu-plugins/wonolog"],
 			File["/etc/php/${version}/cli/conf.d/wonolog.ini"],
 			File["/etc/php/${version}/fpm/conf.d/wonolog.ini"],
-			Exec["install composer"]
+			Exec['install composer']
 		],
 		environment => ['HOME=/home/vagrant'],
 	}
@@ -35,20 +35,20 @@ class wonolog (
 	}
 
 	file { "/etc/php/${version}/cli/conf.d/wonolog.ini":
-		ensure   => file,
-		content  => template('wonolog/wonolog.ini.erb'),
-		owner    => 'root',
-		group    => 'root',
-		mode     => '0644',
-		notify   => Service["php${version}-fpm"]
+		ensure  => file,
+		content => template('wonolog/wonolog.ini.erb'),
+		owner   => 'root',
+		group   => 'root',
+		mode    => '0644',
+		notify  => Service["php${version}-fpm"]
 	}
 
 	file { "/etc/php/${version}/fpm/conf.d/wonolog.ini":
-		ensure   => file,
-		content  => template('wonolog/wonolog.ini.erb'),
-		owner    => 'root',
-		group    => 'root',
-		mode     => '0644',
-		notify   => Service["php${version}-fpm"]
+		ensure  => file,
+		content => template('wonolog/wonolog.ini.erb'),
+		owner   => 'root',
+		group   => 'root',
+		mode    => '0644',
+		notify  => Service["php${version}-fpm"]
 	}
 }
