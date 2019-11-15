@@ -12,7 +12,7 @@ class wonolog (
 	file { "${content}/mu-plugins/wonolog":
 		ensure  => 'directory',
 		force   => true,
-	    require => File["${content}/mu-plugins"],
+		require => File["${content}/mu-plugins"],
 	}
 
 	exec { 'install wonolog':
