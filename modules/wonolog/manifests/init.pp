@@ -10,8 +10,8 @@ class wonolog (
 	}
 
 	file { "${content}/mu-plugins/wonolog":
-		ensure => 'directory',
-		force  => true,
+		ensure  => 'directory',
+		force   => true,
 	    require => File["${content}/mu-plugins"],
 	}
 
